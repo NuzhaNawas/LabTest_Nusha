@@ -8,6 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
+      discountPercentage: "",        // ADDED: tells React to track this field
     }
   );
 
@@ -21,6 +22,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
+      discountPercentage: Number(formData.discountPercentage),  // ADDED: converts "10" string → 10 number
     });
   };
 
@@ -41,6 +43,18 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         value={formData.price}
         onChange={handleChange}
         required
+      />
+
+      {/* ADDED: the new discount input field — placed between Price and Description */}
+      <label>Discount Percentage</label>
+      <input
+        type="number"
+        name="discountPercentage"
+        value={formData.discountPercentage}
+        onChange={handleChange}
+        min="0"
+        max="100"
+        placeholder="e.g. 10"
       />
 
       <label>Description</label>
