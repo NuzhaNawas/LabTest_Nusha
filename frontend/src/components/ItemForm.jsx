@@ -8,7 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
-      discountPercentage: "",        // ADDED: tells React to track this field
+      discountPercentage: "",        // ADDED: tells React to track this field as a task
     }
   );
 

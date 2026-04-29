@@ -12,6 +12,7 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Category is required"],
       trim: true,
     },
+    //commit
     price: {
       type: Number,
       required: [true, "Price is required"],
